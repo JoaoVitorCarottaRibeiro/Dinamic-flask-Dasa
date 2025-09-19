@@ -191,13 +191,13 @@ def rota_relatorio():
         c.drawString(50, 800, "Relatório de Ações do Sistema Steve")
 
         y = 780
-        max_chars = 100  # ajuste conforme a largura da página
+        max_chars = 100 
         for acao_item in historico_acoes:
             linhas = textwrap.wrap(acao_item, width=max_chars)
             for linha in linhas:
                 c.drawString(50, y, linha)
                 y -= 20
-                if y < 50:  # nova página se acabar o espaço
+                if y < 50:  
                     c.showPage()
                     c.setFont("Helvetica", 12)
                     y = 800
@@ -207,6 +207,10 @@ def rota_relatorio():
         return send_file(buffer, as_attachment=True, download_name="Relatorio_Acoes.pdf", mimetype='application/pdf')
 
     return render_template("relatorio.html")
+
+@app.route("/sair")
+def sair():
+    return render_template("sair.html")
 
 
 remedios = [
@@ -508,15 +512,6 @@ def mostrar_historico():
 
 #Função de enviar um email ao usuário, onde temos os dados do remetente como valor fixo (conta criada por nós do grupo no gmail para uso na aplicação), o destinatário de forma dinâmica através de um input, faz o corpo do email com o histórico de ações (função vista anteriormente), gera o PDF colocando-o em anexo no email e envia ao cliente Dasa. Nesse caso o envio é feito através de uma senha gerada no google password, que se comunica através do servidor SMTP para que o envio seja certo.
 def alertas_email(email_destino):
-    import textwrap
-    import datetime
-    from reportlab.pdfgen import canvas
-    from reportlab.lib.pagesizes import A4
-    import smtplib
-    from email.mime.multipart import MIMEMultipart
-    from email.mime.application import MIMEApplication
-    from email.mime.text import MIMEText
-
     email_remetente = os.environ.get("EMAIL_USER")
     senha_app = os.environ.get("EMAIL_PASS")
 
@@ -543,7 +538,6 @@ def alertas_email(email_destino):
                 y = 800
     c.save()
 
-    # Monta e-mail
     msg = MIMEMultipart()
     msg['From'] = email_remetente
     msg['To'] = email_destino
