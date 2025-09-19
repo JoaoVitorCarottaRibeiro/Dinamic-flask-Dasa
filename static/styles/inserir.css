@@ -1,0 +1,152 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b8eb;
+  color: white;
+  padding: 10px 40px; 
+}
+
+header .logo img {
+  height: 80px;
+  cursor: pointer;
+}
+
+header .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header .menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header .menu-links a:hover {
+  color: #a09aee;
+}
+
+header .menu-links .logout button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+header .menu-links .logout button:hover {
+  background-color: #a09aee;
+  color: #fff;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+/* Mensagem de sucesso */
+.mensagem-sucesso {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  margin: 15px auto;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* Formulário */
+form {
+  background: #fff;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background: #4facfe;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #00c6fb;
+}
+
+/* Tabela */
+.tabela-remedios {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-remedios th, .tabela-remedios td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-remedios th {
+  background: #4facfe;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tabela-remedios tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;       /* igual para todos */
+  margin-bottom: 15px; /* espaçamento igual */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* garante largura correta */
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #4facfe;
+  outline: none;
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Remédios Próximos da Validade</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/proximos_validade.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+  <div class="main-container">
+    <h1 class="title-page">Remédios Próximos da Validade</h1>
+
+    {% if proximos %}
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Validade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for remedio in proximos %}
+          <tr>
+            <td>{{ remedio.codigo }}</td>
+            <td>{{ remedio.nome }}</td>
+            <td>{{ remedio.quantidade }}</td>
+            <td>{{ remedio.validade }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="mensagem-sucesso">Nenhum remédio próximo da validade nos próximos 6 meses.</div>
+    {% endif %}
+  </div>
+</body>
+</html>

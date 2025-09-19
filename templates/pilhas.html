@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimas Consultas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/pilhas.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+
+    <h1>Últimas Consultas de Remédios</h1>
+    <div class="container">
+        <form action="{{ url_for('rota_pilha') }}" method="POST" class="form-consulta">
+            <input type="text" name="remedio" placeholder="Digite o nome do remédio" required>
+            <button type="submit">Registrar Consulta</button>
+        </form>
+
+        {% if pilha %}
+            <ul class="pilha-lista">
+                {% for consulta in pilha|reverse %}
+                    <li>
+                        <span class="data">{{ consulta['data'] }}</span>
+                        <span class="remedio">{{ consulta['remedio'] }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="vazio">Nenhuma consulta registrada.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

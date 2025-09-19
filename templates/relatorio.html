@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerar Relatório PDF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/relatorio.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+    <div class="logo">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+        </a>
+    </div>
+
+    <nav class="menu-links">
+        <a href="#section-image-text">Missão</a>
+        <a href="#menu">Menu Steve</a>
+        <a href="/sair" class="logout"><button>Sair</button></a>
+    </nav>
+</header>
+
+<body>
+    <h1>Gerar Relatório PDF</h1>
+    <div class="container">
+        <p>Clique no botão abaixo para baixar o histórico de ações em PDF:</p>
+
+        <a href="{{ url_for('rota_relatorio', acao='pdf') }}" class="btn">Baixar PDF</a>
+
+        {% if aviso %}
+            <p class="aviso">{{ aviso }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

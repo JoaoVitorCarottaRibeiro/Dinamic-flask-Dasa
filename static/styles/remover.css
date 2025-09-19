@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b8eb;
+  color: white;
+  padding: 10px 40px; 
+}
+
+header .logo img {
+  height: 80px;
+  cursor: pointer;
+}
+
+header .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header .menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header .menu-links a:hover {
+  color: #a09aee;
+}
+
+header .menu-links .logout button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+header .menu-links .logout button:hover {
+  background-color: #a09aee;
+  color: #fff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 350px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  color: #555;
+}
+
+input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title-remove{
+    padding-top: 40px;
+    color: #2c3e50;
+}
+
+.mensagem-sucesso {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}

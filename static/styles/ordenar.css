@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b8eb;
+  color: white;
+  padding: 10px 40px; 
+}
+
+header .logo img {
+  height: 80px;
+  cursor: pointer;
+}
+
+header .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header .menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header .menu-links a:hover {
+  color: #a09aee;
+}
+
+header .menu-links .logout button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+header .menu-links .logout button:hover {
+  background-color: #a09aee;
+  color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a3b5d;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color:  #007BFF;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

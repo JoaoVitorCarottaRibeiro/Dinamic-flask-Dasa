@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitar Novo Lote</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/solicitar.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+  <div class="main-container">
+    <h1 class="title-form">Solicitar Novo Lote</h1>
+
+    {% if mensagem %}
+    <div class="mensagem-sucesso">{{ mensagem }}</div>
+    {% endif %}
+
+    <div class="container">
+      <form action="/solicitar" method="POST">
+        <label for="nome">Nome do remédio:</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome do remédio" required>
+
+        <label for="quantidade">Quantidade do novo lote:</label>
+        <input type="number" id="quantidade" name="quantidade" required>
+
+        <button type="submit">Adicionar Lote</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Alertas por E-mail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/alertas.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+    <h1>Enviar Relatório por E-mail</h1>
+
+    <div class="container">
+        <form method="POST">
+            <p class="descricao">Digite o e-mail desejado para enviar o relatório</p>
+            <input type="email" name="email" placeholder="Digite o e-mail do destinatário" required>
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if mensagem %}
+        <div class="mensagem">{{ mensagem }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

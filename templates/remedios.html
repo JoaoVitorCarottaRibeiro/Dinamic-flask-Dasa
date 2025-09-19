@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Remédios</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/remedios.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+  <h1>Lista de Remédios</h1>
+
+  <table class="remedios-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Quantidade</th>
+        <th>Validade</th>
+        <th>Código</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in remedios %}
+      <tr>
+        <td>{{ r.nome }}</td>
+        <td>{{ r.tipo }}</td>
+        <td>{{ r.quantidade }}</td>
+        <td>{{ r.validade }}</td>
+        <td>{{ r.codigo }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

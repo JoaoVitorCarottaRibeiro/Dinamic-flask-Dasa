@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b8eb;
+  color: white;
+  padding: 10px 40px; 
+}
+
+header .logo img {
+  height: 80px;
+  cursor: pointer;
+}
+
+header .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header .menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header .menu-links a:hover {
+  color: #a09aee;
+}
+
+header .menu-links .logout button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+header .menu-links .logout button:hover {
+  background-color: #a09aee;
+  color: #fff;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color:#1a3b5d;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+
+.form-consulta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.form-consulta input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-consulta button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.form-consulta button:hover {
+    background-color: #0056b3;
+}
+
+.pilha-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.pilha-lista li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-left: 5px solid #769de4;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.pilha-lista li:hover {
+    background-color: #e0f7ea;
+}
+
+.data {
+    font-weight: bold;
+    color: #555;
+}
+
+.remedio {
+    color: #333;
+}
+
+.vazio {
+    text-align: center;
+    color: #888;
+    font-size: 1.1em;
+}

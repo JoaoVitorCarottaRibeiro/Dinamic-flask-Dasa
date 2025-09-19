@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Steve</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+      </a>
+    </div>
+
+    <nav class="menu-links">
+      <a href="#section-image-text">Missão</a>
+      <a href="#menu">Menu Steve</a>
+      <a href="/sair" class="logout"><button>Sair</button></a>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="titulo-section">Bem-vindos ao Steve</h1>
+      <p>Sua organização é a nossa preocupação</p>
+    </div>
+  </section>
+
+  <section class="section-image-text" id="section-image-text">
+    <div class="main-container">
+      <div class="image-container">
+        <div class="image-box">
+          <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+        </div>
+      </div>
+      <div class="text-container">
+        <h2>Nossa missão</h2>
+        <p class="text-section-2">
+          O Steve será um assistente digital inteligente com comandos de voz, desenvolvido para ajudar no gerenciamento
+          de estoque na Dasa, tornando-o mais ágil, preciso e eficiente.
+        </p>
+        <p class="text-section-2">
+          Ele conseguirá identificar produtos automaticamente, estabelecer comunicação natural com os colaboradores,
+          realizar verificação em duas etapas via QR Code e integrar-se ao sistema SAP,. Além disso, Steve contará com
+          capacidade de comunicação via servidores SMTP, permitindo envio automatizado de notificações, alertas e
+          relatórios por e-mail, garantindo que informações importantes cheguem rapidamente às equipes responsáveis.
+        </p>
+        <p class="text-section-2">
+          O Steve possibilitará que os colaboradores se concentrem em atividades pontuais, descartando etapas
+          repetitivas e diminuindo erros. Queremos que o Steve torne-se um parceiro virtual confiável, ampliando a
+          produtividade da equipe, modernizando o ambiente logístico da empresa e fortalecendo a comunicação interna por
+          meio de integrações inteligentes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <h1>Menu - Sistema Steve</h1>
+
+  <!-- Menu de funções -->
+  <div class="menu" id="menu">
+    <div class="background">
+      <a href="{{ url_for('rota_exibir_remedios') }}"><button>1. Exibir Remédios</button></a>
+      <a href="{{ url_for('rota_buscar_remedio') }}"><button>2. Buscar Remédio</button></a>
+      <a href="{{ url_for('rota_atualizar') }}"><button>3. Atualizar Informações</button></a>
+      <a href="{{ url_for('rota_inserir') }}"><button>4. Inserir Novo Remédio</button></a>
+      <a href="{{ url_for('rota_remover') }}"><button>5. Remover Remédio</button></a>
+      <a href="{{ url_for('rota_solicitar') }}"><button>6. Solicitar Novo Lote</button></a>
+      <a href="{{ url_for('rota_proximos_validade') }}"><button>7. Próximos à Validade</button></a>
+      <a href="{{ url_for('rota_historico') }}"><button>8. Histórico de Ações</button></a>
+      <a href="{{ url_for('rota_alertas') }}"><button>9. Alertas por E-mail</button></a>
+      <a href="{{ url_for('rota_fila') }}"><button>10. Fila de Consumos</button></a>
+      <a href="{{ url_for('rota_pilha') }}"><button>11. Pilha Últimas Consultas</button></a>
+      <a href="{{ url_for('rota_ordenar') }}"><button>12. Ordenar por Validade</button></a>
+      <a href="{{ url_for('rota_relatorio') }}"><button>13. Gerar Relatório PDF</button></a>
+    </div>
+  </div>
+</body>
+
+</html>

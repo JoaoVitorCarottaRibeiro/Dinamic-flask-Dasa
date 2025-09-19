@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fila de Consumo de Remédios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/fila.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+    <div class="main-container">
+        <h1 class="title-page">Fila de Consumo de Remédios</h1>
+
+        {% if fila %}
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Remédio</th>
+                        <th>Quantidade</th>
+                        <th>Tipo de Ação</th>
+                        <th>Data/Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in fila %}
+                    <tr>
+                        <td>{{ item.remedio }}</td>
+                        <td>{{ item.quantidade }}</td>
+                        <td>{{ item.tipo_operacao }}</td>
+                        <td>{{ item.data }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="mensagem-sucesso">Nenhum consumo registrado na fila.</div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Remover Remédio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/remover.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+  <div class="main-container">
+    <h1 class="title-remove">Remover Remédio</h1>
+
+    {% if mensagem %}
+    <div class="mensagem-sucesso">{{ mensagem }}</div>
+    {% endif %}
+
+    <div class="container">
+      <form action="/remover" method="POST">
+        <label for="codigo">Código do remédio:</label>
+        <input type="text" id="codigo" name="codigo" pattern="\d{6}" required>
+        <button type="submit">Remover</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Buscar Remédio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/buscar.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+  <div class="main-container">
+    <h1>Buscar Remédio</h1>
+    <form action="/buscar" method="POST">
+      <label>Nome do remédio:</label>
+      <input type="text" name="nome" required>
+      <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultado %}
+    <h2>Resultado</h2>
+    <div class="texts">
+      <p>Nome: {{ resultado.nome }}</p>
+      <p>Tipo: {{ resultado.tipo }}</p>
+      <p>Quantidade: {{ resultado.quantidade }}</p>
+      <p>Validade: {{ resultado.validade }}</p>
+      <p>Código: {{ resultado.codigo }}</p>
+      {% elif resultado is not none %}
+      <p>Remédio não encontrado.</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>

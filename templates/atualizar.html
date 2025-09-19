@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Atualizar Informações</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/atualizar.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/icon.png') }}">
+</head>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo Steve">
+    </a>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#section-image-text">Missão</a>
+    <a href="#menu">Menu Steve</a>
+    <a href="/sair" class="logout"><button>Sair</button></a>
+  </nav>
+</header>
+
+<body>
+  <h1>Atualizar Quantidade de Remédio</h1>
+
+  {% if mensagem %}
+  <div class="mensagem-sucesso">{{ mensagem }}</div>
+  {% endif %}
+
+  <div class="main-container">
+    <form action="{{ url_for('rota_atualizar') }}" method="POST">
+      <label>Nome do remédio:</label>
+      <input type="text" name="nome" required><br><br>
+
+      <label>Operação:</label>
+      <select name="operacao">
+        <option value="+">Somar</option>
+        <option value="-">Subtrair</option>
+      </select><br><br>
+
+      <label>Quantidade:</label>
+      <input type="number" name="quantidade" required><br><br>
+
+      <button type="submit">Atualizar</button>
+    </form>
+  </div>
+</body>
+
+</html>

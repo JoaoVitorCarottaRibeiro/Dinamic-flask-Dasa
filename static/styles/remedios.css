@@ -1,0 +1,103 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9; /* fundo geral da página */
+  color: #333;
+  padding: 0; /* remove padding */
+  margin: 0;  /* remove margem do navegador */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b8eb;
+  color: white;
+  padding: 10px 40px; 
+}
+
+header .logo img {
+  height: 80px; /* reduz um pouco para não ficar gigante */
+  cursor: pointer;
+}
+
+header .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header .menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header .menu-links a:hover {
+  color: #a09aee;
+}
+
+header .menu-links .logout button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+header .menu-links .logout button:hover {
+  background-color: #a09aee;
+  color: #fff;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #1a3b5d;
+  margin: 30px 0;
+}
+
+/* Tabela */
+.remedios-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.remedios-table thead {
+  background-color: #88b8eb;
+  color: #fff;
+}
+
+.remedios-table th, .remedios-table td {
+  text-align: left;
+  padding: 12px 15px;
+}
+
+.remedios-table tbody tr:nth-child(even) {
+  background-color: #f2f8fc;
+}
+
+.remedios-table tbody tr:hover {
+  background-color: #e6f0fa;
+  cursor: default;
+}
+
+.remedios-table td:last-child,
+.remedios-table td:nth-child(3) {
+  text-align: center;
+}

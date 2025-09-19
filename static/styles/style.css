@@ -1,0 +1,209 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b8eb;
+  color: white;
+  padding: 10px 20px;
+}
+
+
+header .logo img {
+  height: 80px;
+  cursor: pointer;
+}
+
+
+header .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+header .menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header .menu-links a:hover {
+  color: #a09aee; 
+}
+
+
+header .menu-links .logout button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+header .menu-links .logout button:hover {
+  background-color: #a09aee;
+  color: #fff;
+}
+
+h1 {
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Menu de botões */
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f4f6f9;
+}
+
+
+.menu .background {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
+  max-width: 900px; 
+  width: 100%;
+  justify-items: center; 
+}
+
+
+.menu .background a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+.menu .background button {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #88b8eb;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+
+.menu .background button:hover {
+  background-color: #6ea4dd;
+  transform: scale(1.02);
+}
+
+.menu .background a:nth-child(13) {
+  grid-column: 2;
+}
+
+/* Css da imagem */
+
+
+.hero {
+  position: relative;
+  height: 85vh;
+  width: 100%;
+  background: url('../Images/dasa-image4.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+.titulo-section{
+  color: white
+}
+
+/*section quem somos*/
+
+.section-image-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 40px;
+}
+
+.image-box {
+  background-color: #f5f5f5;
+  padding: 30px;          
+  border-radius: 12px;       
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+.image-box img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.text-container {
+  max-width: 500px;
+}
+
+.text-container h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.main-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.section-image-text{
+  background-color: #8ba5c2;
+  color: white;
+}
+
+.text-section-2{
+  color:white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
