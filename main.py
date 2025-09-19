@@ -8,10 +8,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from io import BytesIO
 import textwrap
+import os
 
 from flask import Flask, render_template, request, redirect, url_for, send_file, flash
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "dev-secret") 
 
 
 @app.route("/")
@@ -515,8 +517,8 @@ def alertas_email(email_destino):
     from email.mime.application import MIMEApplication
     from email.mime.text import MIMEText
 
-    email_remetente = "fiapespx1@gmail.com"
-    senha_app = "gjdy gxjw tjnm efyn" 
+    email_remetente = os.environ.get("EMAIL_USER")
+    senha_app = os.environ.get("EMAIL_PASS")
 
     if not historico_acoes:
         corpo_email = "Nenhuma ação registrada ainda."
