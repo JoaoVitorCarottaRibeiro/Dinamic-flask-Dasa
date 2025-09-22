@@ -207,3 +207,43 @@ h1 {
   font-size: 1rem;
   line-height: 1.5;
 }
+
+/* Responsividade */
+
+/* Responsividade para telas menores */
+  @media (max-width: 768px) {
+  .section-image-text .main-container {
+    display: flex !important;
+    flex-direction: column !important; /* empilha verticalmente */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .section-image-text .image-container {
+    order: 2; /* imagem depois do texto */
+    width: 80%; /* ajuste de largura para telas menores */
+  }
+
+  .section-image-text .text-container {
+    order: 1; /* texto primeiro */
+    max-width: 90%;
+    text-align: center;
+  }
+
+  /* Menu de botões - empilhados verticalmente */
+  .menu .background {
+    display: flex !important;
+    flex-direction: column !important; /* empilha os botões */
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto; /* centraliza */
+  }
+
+  .menu .background a {
+    width: 100%;
+  }
+
+  .menu .background button {
+    width: 100%;
+  }
+}
